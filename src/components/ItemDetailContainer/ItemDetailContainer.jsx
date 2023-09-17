@@ -1,18 +1,22 @@
 import { useEffect, useState } from "react";
-import ItemDetail from "../ItemDetail/ItemDetail";
+import { useParams } from "react-router-dom";
 import { mFetch } from "../../Data/data";
+import ItemDetail from "../ItemDetail/ItemDetail";
 
 const ItemDetailContainer = () => {
-    const [products, setProducts] = useState({});
+    const [item, setItem] = useState({})
+    const {id} = useParams()
+    // console.log(id);
+    
     useEffect(() => {
-        mFetch(5)
-        .then((res) => setProducts(res))
-        .catch((err) => console.log(err));
-    }, []);
+        mFetch(Number(id))
+        .then((res) => setItem(res))
+        .catch((err) => console.log(err))
+    }, [])
 
     return (
         <div>
-        <ItemDetail products={products} />
+        <ItemDetail item={item} />
         </div>
     );
 };

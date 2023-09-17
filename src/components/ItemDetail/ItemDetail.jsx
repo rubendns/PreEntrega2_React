@@ -1,13 +1,13 @@
-const ItemDetail = ({ products }) => {
-  // console.log(products);
+const ItemDetail = ({ item }) => {
+//   console.log(item);
     return (
         <div className="col">
         <h2>Detalle del producto</h2>
         <div className="col">
-            <img src={products.imagen} alt="imagen" />
-            <p>Modelo: {products.modelo}</p>
-            <p>Descripcion: {products.descripcion}</p>
-            <p>Precio: ${products.precio}</p>
+            <img src={item.imagen} alt="imagen"/>
+            <p>Modelo: {item.modelo}</p>
+            <p>Descripcion: {item.descripcion}</p>
+            <p>Precio: ${item.precio}</p>
         </div>
         </div>
     );

@@ -1,15 +1,15 @@
+import { Link } from 'react-router-dom'
+
 const Item = ({ product }) => {
-  // console.log(product);
+//   console.log(product);
     return (
         <div className="producto">
-        <img src={product.imagen} alt="imagen" />
-        <p>Modelo: {product.modelo}</p>
-        <p>Precio: ${product.precio}</p>
-        <div>
-            <button className="ver-mas">Ver más</button>
+            <img src={product.imagen}/>
+            <p>Modelo: {product.modelo}</p>
+            <p>Precio: ${product.precio}</p>
+            <Link className="ver-mas" to={`/item/${product.id}`}>Ver más</Link>
         </div>
-        </div>
-    );
-};
+    )
+}
 
 export default Item;

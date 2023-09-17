@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import ItemList from "../ItemList/ItemList";
 import { mFetch } from "../../Data/data";
+import ItemList from "../ItemList/ItemList";
+
 
 const ItemListContainer = () => {
     const [products, setProduct] = useState([]);
@@ -14,3 +15,4 @@ const ItemListContainer = () => {
 };
 
 export default ItemListContainer;
+

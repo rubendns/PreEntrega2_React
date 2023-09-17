@@ -112,9 +112,10 @@ const products = [
   },
 ];
 
-export const mFetch = (pid) =>
-  new Promise((res) => {
-    setTimeout(() => {
-      res(pid ? products.find((product) => product.id === pid) : products);
+export const mFetch = (id) => {
+  return new Promise((resolve) => {
+    setTimeout( () => {
+      resolve(id ? products.find(product => product.id === id) : products);
     }, 1000);
   });
+}
