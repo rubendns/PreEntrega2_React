@@ -1,25 +1,16 @@
-/* import { useEffect, useState } from "react";
-import { mFetch } from "../utils/mockFetch";
+import { useEffect, useState } from "react";
 import ItemList from "../ItemList/ItemList";
+import { mFetch } from "../../Data/data";
 
 const ItemListContainer = () => {
-  const [products, setProduct] = useState([]);
-  const [loading, setLoading] = useState(true);
+    const [products, setProduct] = useState([]);
+    useEffect(() => {
+        mFetch()
+        .then((res) => setProduct(res))
+        .catch((err) => console.log(err));
+    }, []);
 
-  useEffect(() => {
-    mFetch()
-      .then((respuesta) => setProduct(respuesta))
-      .catch((err) => console.log(err))
-      .finally(() => setLoading(false));
-  }, []);
-
-  return (
-    <center>
-      <div className="row">
-        {loading ? <h2>Cargando ...</h2> : <ItemList products={products} />}
-      </div>
-    </center>
-  );
+    return <div>{<ItemList products={products} />}</div>;
 };
 
-export default ItemListContainer; */
+export default ItemListContainer;

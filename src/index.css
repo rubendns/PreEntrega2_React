@@ -118,3 +118,36 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+.productos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding-block: 2rem;
+}
+
+.producto {
+  display: flex;
+  flex-direction: column;
+  border-radius: 2rem;
+  border: 1px solid #7f9a1e;
+  text-align: center;
+  font-weight: bold;
+}
+
+.producto > img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 2rem;
+
+}
+
+.producto .ver-mas {
+  text-decoration: none;
+  color: white;
+  transition: .2s;
+}
+
+.producto .ver-mas:hover {
+  background-color: black;
+  color: white;
+}
