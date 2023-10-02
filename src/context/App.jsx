@@ -8,9 +8,6 @@ import ItemDetailContainer from "./components/Item/ItemDetailContainer";
 import ItemListContainer from "./components/Item/ItemListContainer";
 import { CartContextProvider } from "./context/CartContext";
 import CartView from "./components/Cart/CartView";
-import { initFirebase } from './firebase/config';
-
-initFirebase()
 
 function App() {
     return (
